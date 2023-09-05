@@ -665,9 +665,9 @@ def main(args):
         logger.info(traceback.format_exc())
         logger.info(E)
         exit()
-    for ino in range(len(img_list)):
-        logger.info("Predicts of {}:{}".format(valid_image_file_list[ino],
-                                               rec_res[ino]))
+    # for ino in range(len(img_list)):
+    #     logger.info("Predicts of {}:{}".format(valid_image_file_list[ino],
+    #                                            rec_res[ino]))
     if args.benchmark:
         text_recognizer.autolog.report()
 

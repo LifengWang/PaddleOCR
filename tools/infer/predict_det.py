@@ -325,13 +325,13 @@ if __name__ == "__main__":
                 save_pred = os.path.basename(image_file) + "\t" + str(
                     json.dumps([x.tolist() for x in dt_boxes])) + "\n"
             save_results.append(save_pred)
-            logger.info(save_pred)
-            if len(imgs) > 1:
-                logger.info("{}_{} The predict time of {}: {}".format(
-                    idx, index, image_file, elapse))
-            else:
-                logger.info("{} The predict time of {}: {}".format(
-                    idx, image_file, elapse))
+            # logger.info(save_pred)
+            # if len(imgs) > 1:
+            #     logger.info("{}_{} The predict time of {}: {}".format(
+            #         idx, index, image_file, elapse))
+            # else:
+            #     logger.info("{} The predict time of {}: {}".format(
+            #         idx, image_file, elapse))
 
             src_im = utility.draw_text_det_res(dt_boxes, img)
 
@@ -346,7 +346,7 @@ if __name__ == "__main__":
                 draw_img_save_dir,
                 "det_res_{}".format(os.path.basename(save_file)))
             cv2.imwrite(img_path, src_im)
-            logger.info("The visualized image saved in {}".format(img_path))
+            # logger.info("The visualized image saved in {}".format(img_path))
 
     with open(os.path.join(draw_img_save_dir, "det_results.txt"), 'w') as f:
         f.writelines(save_results)
